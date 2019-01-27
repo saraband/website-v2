@@ -166,10 +166,17 @@ export default class extends React.PureComponent {
           name,
           subsections
         }, index) => (
-          <Fragment>
-            <Section selected={currentSection === name}>{name}</Section>
+          <Fragment key={name}>
+            <Section selected={currentSection === name}>
+              {name}
+            </Section>
             {subsections.map(sub => (
-              <Subsection selected={currentSection === sub.name}>{sub.name}</Subsection>
+              <Subsection
+                key={sub.name}
+                selected={currentSection === sub.name}
+                >
+                {sub.name}
+              </Subsection>
             ))}
           </Fragment>
         ))}

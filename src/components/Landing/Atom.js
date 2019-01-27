@@ -107,6 +107,7 @@ export default class Atom extends React.PureComponent {
 
           return (
             <CircleContainer
+              key={index}
               size={maxSize * ratio}
               opacity={(1 - ratio) * 0.5 + 0.25}
               ratio={ratio}
