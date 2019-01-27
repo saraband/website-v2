@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Section from '../Section'
 import FontSizes from '../../constants/FontSizes'
-import SectionTitle from '../SectionTitle'
+import { SectionTitle } from '../Title'
 
 export default class extends React.PureComponent {
   constructor (props) {
@@ -12,7 +12,7 @@ export default class extends React.PureComponent {
   render () {
     return (
       <Section>
-        <SectionTitle>About</SectionTitle>
+        <SectionTitle>About me</SectionTitle>
       </Section>
     );
   }

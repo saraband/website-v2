@@ -21,15 +21,12 @@ const Container = styled.div`
   }
 `;
 
-const Name = styled(Title).attrs({
-  fill: 120
-})`
+const Name = styled(Title)`
   font-size: ${FontSizes.BIG};
   color: ${Colors.TURQUOISE};
 `;
 
 const JobTitle = styled(Title).attrs({
-  fill: 100,
   delay: 0.5,
   bgColor: Colors.WHITE
 })`
