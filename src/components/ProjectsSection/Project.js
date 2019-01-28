@@ -11,18 +11,18 @@ const StyledSlider = styled(Slider)`
 `;
 
 const Description = styled.div`
-  border: 1px solid red;
   flex-grow: 1;
   margin-right: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-self: stretch;
 `;
 
 const Container = styled.div`
-  border: 1px solid blue;
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin-bottom: 30px;
   padding: 20px;
   margin-right: 30px;
@@ -59,13 +59,11 @@ const DescriptionContent = styled.div``;
 
 const Tag = styled.li`
   display: inline-block;
-  border: 1px solid red;
   margin: 5px;
   padding: 5px;
 `;
 
 const DescriptionButtons = styled.div`
-  border: 1px solid red;
   display: flex;
   justify-content: space-between;
 `;

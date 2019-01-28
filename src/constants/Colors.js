@@ -3,5 +3,6 @@ export default {
   LIGHT_GREY: '#464c4f',
   TURQUOISE: '#38c5e5',
   WHITE: '#FFF',
-  LIGHT_TURQUOISE: '#daf4f7'
+  LIGHT_TURQUOISE: '#daf4f7',
+  RED: '#F14E56'
 };

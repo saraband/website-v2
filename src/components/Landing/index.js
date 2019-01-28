@@ -92,7 +92,6 @@ const MouseWheel = styled.div`
 
 export default class Index extends React.PureComponent {
   render () {
-    return null;
     return (
       <GreyShadesBackground>
         <Container>

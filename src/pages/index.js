@@ -9,7 +9,6 @@ import SkillsSection from '../components/SkillsSection';
 import ExperienceSection from '../components/ExperienceSection';
 import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
-import Footer from '../components/Footer'
 
 const Title = styled.h1``;
 
@@ -21,17 +20,13 @@ const Section = styled.section`
 class IndexPage extends React.Component {
   render () {
     return (
-      <div>
-        <Landing />
-        <Layout>
-          <AboutSection />
-          <SkillsSection />
-          <ExperienceSection />
-          <ProjectsSection />
-          <ContactSection />
-        </Layout>
-        <Footer />
-      </div>
+      <Layout>
+        <AboutSection />
+        <SkillsSection />
+        <ExperienceSection />
+        <ProjectsSection />
+        <ContactSection />
+      </Layout>
     );
   }
 }

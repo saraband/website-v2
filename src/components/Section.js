@@ -27,10 +27,9 @@ const Container = styled.div`
   }
 `;
 
-const WidthContainer = styled.div`
+export const WidthContainer = styled.div`
   max-width: 1200px;
   margin: auto;
-  border: 2px solid red;
 `;
 
 export default class Section extends React.PureComponent {

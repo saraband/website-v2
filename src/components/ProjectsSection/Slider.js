@@ -6,9 +6,10 @@ import { NoSelect } from '../../misc/styles'
 const Container = styled.div`
   background-color: blue;
   opacity: 0.7;
-  border: 1px solid red;
   position: relative;
   overflow: hidden;
+  padding-bottom: 16.5%;
+  padding-top: 16.5%;
 `;
 
 const SlidesContainer = styled.div`
@@ -40,6 +41,8 @@ const Controls = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  top: 0;
+  left: 0;
 `;
 
 const ControlButton = styled.div`
