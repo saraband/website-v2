@@ -4,12 +4,7 @@ import Section from '../Section'
 import FontSizes from '../../constants/FontSizes'
 
 const Container = styled.div`
-  background-color: lightblue;
-  margin-left: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: flex;
-  flex-direction: row;
+  width: 100%;
 `;
 
 const SkillContainer = styled.div`
@@ -42,15 +37,7 @@ const SkillFilling = styled.div`
   width: ${p => p.filling}%;
 `;
 
-const Image = styled.div`
-  width: 250px;
-  height: 100% !important;
-  background-color: darkslateblue;
-  border: 1px solid red;
-`;
-
 const SkillsListContainer = styled.div`
-  border: 1px solid red;
   flex-grow: 1;
 `;
 
@@ -83,7 +70,6 @@ export default class extends React.PureComponent {
               />
           ))}
         </SkillsListContainer>
-        <Image></Image>
       </Container>
     );
   }

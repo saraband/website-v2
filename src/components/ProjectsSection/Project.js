@@ -123,7 +123,7 @@ export default class extends React.PureComponent {
             <DemoButton>Live demo</DemoButton>
           </DescriptionButtons>
         </Description>
-        <StyledSlider slides={screenshots} />
+        <StyledSlider slides={new Array(5).fill(1)} />
       </Container>
     );
   }

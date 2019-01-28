@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 const TitleContainer = styled.div`
   display: flex;
-  border: 1px solid red;
   margin-bottom: 30px;
 `;
 
@@ -31,6 +30,7 @@ const Container = styled.div`
 const WidthContainer = styled.div`
   max-width: 1200px;
   margin: auto;
+  border: 2px solid red;
 `;
 
 export default class Section extends React.PureComponent {
@@ -42,7 +42,7 @@ export default class Section extends React.PureComponent {
     } = this.props;
 
     return (
-      <Container>
+      <Container {...rest}>
         <WidthContainer>
           <TitleContainer>
             <SectionTitle>{title}</SectionTitle>
