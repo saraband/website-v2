@@ -12,11 +12,18 @@ const TitleContainer = styled.div`
 const Container = styled.div`
   padding: 70px;
   background-color: #f5f5f5;
+  
+  /* Section title aligned to the right */
+  ${TitleContainer} {
+    justify-content: flex-end;
+  }
+
+  /* all even children have different background and title alignment */
   &:nth-child(even) {
     background-color: white;
     
     ${TitleContainer} {
-      justify-content: flex-end;
+      justify-content: flex-start;
     }
   }
 `;

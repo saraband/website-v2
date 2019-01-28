@@ -5,8 +5,11 @@ import Landing from '../components/Landing';
 import Layout from '../components/layout';
 import './index.css';
 // import Image from '../components/image';
-import AboutSection from '../components/About';
-import SkillsSection from '../components/SkillsAndInterests';
+import AboutSection from '../components/AboutSection';
+import SkillsSection from '../components/SkillsSection';
+import ExperienceSection from '../components/ExperienceSection';
+import ProjectsSection from '../components/ProjectsSection';
+import ContactSection from '../components/ContactSection';
 
 const Title = styled.h1``;
 
@@ -23,8 +26,9 @@ class IndexPage extends React.Component {
         <Layout>
           <AboutSection />
           <SkillsSection />
-          <Section id='dongzong'>Hello</Section>
-          <Section>Hello</Section>
+          <ExperienceSection />
+          <ProjectsSection />
+          <ContactSection />
         </Layout>
       </div>
     );

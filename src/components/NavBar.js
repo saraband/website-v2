@@ -58,20 +58,20 @@ const Subsection = styled(Section)`
 
 const sections = [
   {
-    name: 'About',
+    name: 'AboutSection',
     subsections: [
       {
-        name: 'SkillsAndInterests & interests',
+        name: 'SkillsSection & interests',
         anchor: 'skills-and-interests'
       },
       {
-        name: 'Experience',
+        name: 'ExperienceSection',
         anchor: 'experience'
       }
     ]
   },
   {
-    name: 'Projects',
+    name: 'ProjectsSection',
     subsections: [
       {
         name: 'Hotbox',
