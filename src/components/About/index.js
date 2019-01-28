@@ -34,10 +34,6 @@ export default class extends React.PureComponent {
   render () {
     return (
       <Section>
-          <Image />
-          <Top>
-            <SectionTitle>Section</SectionTitle>
-          </Top>
         <Content>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam bibendum, dolor eget consectetur dictum, neque urna scelerisque diam, hendrerit gravida nisi lacus at justo. Duis porttitor turpis faucibus odio convallis semper. Praesent euismod nunc egestas augue dictum vestibulum. Morbi blandit sapien quis elit ultrices ultrices.
         </Content>

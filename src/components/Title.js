@@ -14,6 +14,7 @@ const FadeUp = getFadeUpKeyframes({});
 const FadeUpBackgroundSection = getFadeUpKeyframes({ to: 40 });
 const Container = styled.div`
   display: inline-block;
+  border: 1px solid red;
   position: relative;
   font-size: ${FontSizes.HUGE};
   overflow: hidden;

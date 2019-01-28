@@ -18,7 +18,6 @@ export default class extends React.PureComponent {
   render () {
     return (
       <Section>
-        <SectionTitle>Section title</SectionTitle>
         <Skills skills={SkillsList} />
       </Section>
     );
