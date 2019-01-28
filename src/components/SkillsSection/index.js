@@ -32,7 +32,6 @@ const Content = styled.div`
   background-color: ${Colors.DARK_WHITE};
   margin-left: 30px;
   margin-right: 30px;
-  border: 1px solid blue;
 `;
 
 export default class extends React.PureComponent {

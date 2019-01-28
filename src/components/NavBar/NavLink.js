@@ -4,7 +4,8 @@ import styled from 'styled-components';
 const StyledLink = styled.a`
   display: inline-block;
   cursor: pointer;
-  padding: 20px;
+  padding: 10px;
+  text-shadow: 0 -2px rgba(0, 0, 0, 0.1);
   
   &:hover {
     background-color: rgba(255, 255, 255, 0.2);

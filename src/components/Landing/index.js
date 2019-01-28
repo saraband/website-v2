@@ -26,15 +26,16 @@ const Name = styled(Title).attrs({
 })`
   font-size: ${FontSizes.BIG};
   color: ${Colors.GREY};
+  font-weight: bold;
 `;
 
 const JobTitle = styled(Title).attrs({
   delay: 0.5,
-  bgColor: Colors.LIGHT_RED
+  bgColor: Colors.LIGHT_TURQUOISE
 })`
   font-size: ${FontSizes.LARGE};
-  color: ${Colors.RED};
-  font-weight: 200;
+  color: ${Colors.DARK_TURQUOISE};
+  font-weight: normal;
 `;
 
 const ScrollContainer = styled.div`
@@ -67,8 +68,8 @@ const DownTitle = styled(Title).attrs({
   bgColor: Colors.WHITE
 })`
   font-size: ${FontSizes.LARGE};
-  color: ${Colors.RED};
-  font-weight: 100;
+  color: ${Colors.DARK_TURQUOISE};
+  font-weight: normal;
 `;
 
 const MouseScroll = styled.div`
@@ -89,7 +90,7 @@ const MouseWheel = styled.div`
   width: 40%;
   height: 40%;
   border-radius: 20px;
-  background-color: ${Colors.RED};
+  background-color: ${Colors.TURQUOISE};
 `;
 
 export default class Index extends React.PureComponent {

@@ -11,7 +11,7 @@ const Container = styled.div`
 
 const SkillContainer = styled.div`
   width: 100%;
-  background-color: ${Colors.RED};
+  background-color: ${Colors.TURQUOISE};
   color: white;
   position: relative;
   margin-bottom: 20px;
@@ -37,7 +37,7 @@ const SkillFilling = styled.div`
   position: absolute;
   top: 0;
   z-index: 45;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.1);
   height: 100%;
   width: ${p => p.filling}%;
 `;

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
+import Colors from '../../constants/Colors'
 
 export const FadeIn = keyframes`
   from {
@@ -53,7 +54,7 @@ const BigCircle = styled.div`
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
   top: 50%;
-  border: 2px solid white;
+  border: 1px solid ${Colors.WHITE};
   border-radius: 100%;
   height: 100%;
   width: 100%;
@@ -63,13 +64,13 @@ const BigCircle = styled.div`
 
 const LittleCircle = styled.div`
   position: absolute;
-  background-color: white;
+  background-color: ${Colors.WHITE};
   border-radius: 100%;
   left: 0;
   top: 50%;
   border-radius: 100%;
-  height: ${p => p.size / 10}px;
-  width: ${p => p.size / 10}px;
+  height: ${p => p.size / 20}px;
+  width: ${p => p.size / 20}px;
   transform: translate3d(-50%, -50%, 0);
 `;
 

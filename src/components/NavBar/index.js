@@ -8,7 +8,7 @@ import { BoxShadow } from '../../misc/styles'
 const Container = styled.div`
   position: sticky;
   top: 0;
-  background-color: ${Colors.RED};
+  background-color: ${Colors.DARK_TURQUOISE};
   color: white;
   z-index: 9999;
   ${BoxShadow}

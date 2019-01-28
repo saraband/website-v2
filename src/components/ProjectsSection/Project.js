@@ -68,9 +68,9 @@ const Tag = styled.li`
   margin: 8px;
   margin-left: 0;
   padding: 5px;
-  border: 1px solid ${Colors.RED};
+  border: 1px solid ${Colors.TURQUOISE_2};
   
-  color: ${Colors.RED};
+  color: ${Colors.TURQUOISE_2};
   font-size: ${FontSizes.NORMAL};
 `;
 
@@ -82,9 +82,9 @@ const DescriptionButtons = styled.div`
 const SourceButton = styled.a`
   text-decoration: none;
   border-radius: 2px;
-  border: 2px solid ${Colors.GREY};
+  border: 2px solid ${Colors.LIGHT_GREY};
   font-size: ${FontSizes.MEDIUM};
-  color: ${Colors.GREY};
+  color: ${Colors.LIGHT_GREY};
   padding: 10px;
   margin-right: 20px;
   flex-grow: 1;
@@ -94,21 +94,22 @@ const SourceButton = styled.a`
   transition: all 0.2s ease-in-out;
   
   &:hover {
-    border-color: ${Colors.RED};
-    color: ${Colors.RED};
+    border-color: ${Colors.TURQUOISE_2};
+    color: ${Colors.TURQUOISE_2};
   }
 `;
 
 const DemoButton = styled(SourceButton)`
   margin-right: 0;
-  border: 2px solid ${Colors.RED};
+  border: 2px solid ${Colors.TURQUOISE_2};
   color: white;
-  background-color: ${Colors.RED};
+  background-color: ${Colors.TURQUOISE_2};
   transition: all 0.2s ease-in-out;
+  text-shadow: 0 -2px rgba(0, 0, 0, 0.1);
   
   &:hover {
-    background-color: #f25f66;
-    border-color: #f25f66;
+    background-color: ${Colors.TURQUOISE};
+    border-color: ${Colors.TURQUOISE};
     color: white;
     ${BoxShadow}
   }
