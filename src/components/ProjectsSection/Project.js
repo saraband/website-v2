@@ -3,14 +3,47 @@ import styled from 'styled-components';
 import FontSizes from '../../constants/FontSizes'
 import Slider from './Slider'
 
+const StyledSlider = styled(Slider)`
+  flex-shrink: 0;
+  width: 60%;
+  height: 30vh;
+  margin-right: -50px;
+`;
+
+const Description = styled.div`
+  border: 1px solid red;
+  flex-grow: 1;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 const Container = styled.div`
   border: 1px solid blue;
   display: flex;
   flex-direction: row;
   margin-bottom: 30px;
+  padding: 20px;
+  margin-right: 30px;
+  background-color: grey;
   
   &:nth-child(even) {
     flex-direction: row-reverse;
+    margin-right: 0 !important;
+    margin-left: 30px;
+    
+    ${StyledSlider} {
+      margin-right: unset;
+      margin-left: -50px;
+    }
+    
+    ${Description} {
+      margin-right: unset;
+      margin-left: 20px;
+    }
+    
+    margin-right: 20px;
   }
   
   &:last-child {
@@ -18,14 +51,11 @@ const Container = styled.div`
   }
 `;
 
-const Description = styled.div`
-  border: 1px solid red;
-  flex-grow: 1;
-`;
-
 const TagsList = styled.ul`
   list-style-type: none;
 `;
+
+const DescriptionContent = styled.div``;
 
 const Tag = styled.li`
   display: inline-block;
@@ -34,10 +64,34 @@ const Tag = styled.li`
   padding: 5px;
 `;
 
-const StyledSlider = styled(Slider)`
-  flex-shrink: 0;
-  width: 60%;
-  height: 30vh;
+const DescriptionButtons = styled.div`
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const SourceButton = styled.a`
+  text-decoration: none;
+  border: 2px solid black;
+  font-size: ${FontSizes.MEDIUM};
+  color: black;
+  padding: 10px;
+  margin-right: 20px;
+  flex-grow: 1;
+  background-color: transparent;
+  cursor: pointer;
+  text-align: center;
+`;
+
+const DemoButton = styled(SourceButton)`
+  margin-right: 0;
+  border: 2px solid red;
+  color: white;
+  background-color: red;
+`;
+
+const DescriptionTitle = styled.h4`
+  font-size: ${FontSizes.VERY_LARGE};
 `;
 
 export default class extends React.PureComponent {
@@ -59,9 +113,15 @@ export default class extends React.PureComponent {
     return (
       <Container {...rest}>
         <Description>
-          <h4>{title}</h4>
-          <p>{description}</p>
-          <TagsList>{tags.map((tag, index) => <Tag key={index}>{tag}</Tag>)}</TagsList>
+          <DescriptionContent>
+            <DescriptionTitle>{title}</DescriptionTitle>
+            <p>{description}</p>
+            <TagsList>{tags.map((tag, index) => <Tag key={index}>{tag}</Tag>)}</TagsList>
+          </DescriptionContent>
+          <DescriptionButtons>
+            <SourceButton>See source</SourceButton>
+            <DemoButton>Live demo</DemoButton>
+          </DescriptionButtons>
         </Description>
         <StyledSlider slides={screenshots} />
       </Container>

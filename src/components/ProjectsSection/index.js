@@ -7,6 +7,8 @@ import Project from './Project'
 const Content = styled.div`
   border: 1px solid red;
   min-height: 500px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const hotBoxData = {

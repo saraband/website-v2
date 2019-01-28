@@ -4,12 +4,12 @@ import styled from 'styled-components';
 import Landing from '../components/Landing';
 import Layout from '../components/layout';
 import './index.css';
-// import Image from '../components/image';
 import AboutSection from '../components/AboutSection';
 import SkillsSection from '../components/SkillsSection';
 import ExperienceSection from '../components/ExperienceSection';
 import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
+import Footer from '../components/Footer'
 
 const Title = styled.h1``;
 
@@ -30,6 +30,7 @@ class IndexPage extends React.Component {
           <ProjectsSection />
           <ContactSection />
         </Layout>
+        <Footer />
       </div>
     );
   }
