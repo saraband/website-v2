@@ -2,6 +2,8 @@ import React, { memo } from 'react';
 import styled from 'styled-components';
 import Section from '../Section'
 import FontSizes from '../../constants/FontSizes'
+import Colors from '../../constants/Colors'
+import { BoxShadow } from '../../misc/styles'
 
 const Container = styled.div`
   width: 100%;
@@ -9,11 +11,12 @@ const Container = styled.div`
 
 const SkillContainer = styled.div`
   width: 100%;
-  background-color: darkslateblue;
+  background-color: ${Colors.RED};
   color: white;
   position: relative;
   margin-bottom: 20px;
   margin-left: -30px;
+  ${BoxShadow}
   
   &:first-child {
     margin-top: 20px;
@@ -23,16 +26,18 @@ const SkillContainer = styled.div`
 const SkillName = styled.div`
   color: white;
   font-size: ${FontSizes.MEDIUM};
-  padding: 5px;
+  padding: 5px 15px;
   z-index: 50;
   position: relative;
+  font-weight: normal;
+  font-family: 'Roboto';
 `;
 
 const SkillFilling = styled.div`
   position: absolute;
   top: 0;
   z-index: 45;
-  background-color: darkolivegreen;
+  background-color: rgba(0, 0, 0, 0.2);
   height: 100%;
   width: ${p => p.filling}%;
 `;

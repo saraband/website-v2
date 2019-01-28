@@ -11,9 +11,9 @@ const Content = styled.div`
 `;
 
 const hotBoxData = {
-  title: 'Title',
+  title: 'HotBox',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum urna eu rhoncus scelerisque. Nullam sit amet diam luctus, lacinia nulla sit amet, bibendum velit.',
-  tags: ['Tag', 'Tag', 'Tag', 'Tag', 'Tag', 'Tag', 'Tag', 'Tag'],
+  tags: ['React', 'GraphQL', 'Redux', 'Sequelize', 'Postgres'],
   screenshots: []
 };
 const nuageData = hotBoxData;

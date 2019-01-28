@@ -1,7 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import FontSizes from '../../constants/FontSizes'
-import { NoSelect } from '../../misc/styles'
+import { BoxShadow, NoSelect } from '../../misc/styles'
+import ArrowRightSVG from '../../images/arrow-right.svg';
+import ArrowLeftSVG from '../../images/arrow-left.svg';
+
+const ArrowLeft = styled.img.attrs({
+  src: ArrowLeftSVG
+})`
+  margin: 0;
+  display: block;
+`;
+
+const ArrowRight = styled.img.attrs({
+  src: ArrowRightSVG
+})`
+  margin: 0;
+  display: block;
+`;
 
 const Container = styled.div`
   background-color: blue;
@@ -10,6 +26,7 @@ const Container = styled.div`
   overflow: hidden;
   padding-bottom: 16.5%;
   padding-top: 16.5%;
+  ${BoxShadow}
 `;
 
 const SlidesContainer = styled.div`
@@ -49,8 +66,14 @@ const ControlButton = styled.div`
   padding: 10px;
   background-color: white;
   cursor: pointer;
-  
+  filter: grayscale(100%);
+  transition: all 0.2s ease-in-out;
   ${NoSelect}
+  
+  &:hover {
+    filter: grayscale(0%);
+    ${BoxShadow}
+  }
 `;
 
 export default class extends React.PureComponent {
@@ -95,8 +118,8 @@ export default class extends React.PureComponent {
     return (
       <Container {...rest}>
         <Controls>
-          <ControlButton onClick={this.previousSlide}>Previous</ControlButton>
-          <ControlButton onClick={this.nextSlide}>Next</ControlButton>
+          <ControlButton onClick={this.previousSlide}><ArrowLeft /></ControlButton>
+          <ControlButton onClick={this.nextSlide}><ArrowRight /></ControlButton>
         </Controls>
         <SlidesContainer
           currentSlide={currentSlide}

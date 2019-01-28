@@ -99,7 +99,7 @@ Title.propTypes = {
 };
 
 Title.defaultProps = {
-  bgColor: Colors.LIGHT_TURQUOISE,
+  bgColor: Colors.LIGHT_RED,
   delay: 0,
   type: 'landing'
 };

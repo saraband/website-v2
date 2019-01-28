@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { WidthContainer } from '../Section'
 import NavLink from './NavLink'
 import Colors from '../../constants/Colors'
+import { BoxShadow } from '../../misc/styles'
 
 const Container = styled.div`
   position: sticky;
@@ -10,7 +11,7 @@ const Container = styled.div`
   background-color: ${Colors.RED};
   color: white;
   z-index: 9999;
-  box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.12);
+  ${BoxShadow}
 `;
 
 const MenuContainer = styled(WidthContainer)`
