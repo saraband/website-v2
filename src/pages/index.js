@@ -6,6 +6,7 @@ import Layout from '../components/layout';
 import './index.css';
 // import Image from '../components/image';
 import AboutSection from '../components/About';
+import SkillsSection from '../components/SkillsAndInterests';
 
 const Title = styled.h1``;
 
@@ -21,6 +22,7 @@ class IndexPage extends React.Component {
         <Landing />
         <Layout>
           <AboutSection />
+          <SkillsSection />
           <Section id='dongzong'>Hello</Section>
           <Section>Hello</Section>
         </Layout>

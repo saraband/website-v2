@@ -61,7 +61,7 @@ const sections = [
     name: 'About',
     subsections: [
       {
-        name: 'Skills & interests',
+        name: 'SkillsAndInterests & interests',
         anchor: 'skills-and-interests'
       },
       {
@@ -159,6 +159,7 @@ export default class extends React.PureComponent {
       currentSection
     } = this.state;
 
+    return null;
     return (
       <StyledBar>
         <Blank />
