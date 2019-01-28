@@ -54,7 +54,7 @@ export default class Section extends React.PureComponent {
   }
 }
 
-Section.PropTypes = {
+Section.propTypes = {
   title: PropTypes.string
 };
 
