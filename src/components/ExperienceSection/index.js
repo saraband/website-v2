@@ -15,7 +15,11 @@ export default class extends React.PureComponent {
 
   render () {
     return (
-      <Section>
+      <Section
+        title='Experience'
+        anchor='experience'
+        position='right'
+        >
         <Content>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam bibendum, dolor eget consectetur dictum, neque urna scelerisque diam, hendrerit gravida nisi lacus at justo. Duis porttitor turpis faucibus odio convallis semper. Praesent euismod nunc egestas augue dictum vestibulum. Morbi blandit sapien quis elit ultrices ultrices.
         </Content>

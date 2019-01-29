@@ -1,6 +1,7 @@
 export default {
   GREY: '#2D3235',
   LIGHT_GREY: '#666c6f',
+  VERY_LIGHT_GREY: '#999c9f',
   TURQUOISE: '#7FCECE',
   TURQUOISE_2: '#5bc0c0',
   DARK_TURQUOISE: '#3c9f9f',

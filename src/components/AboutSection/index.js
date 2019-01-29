@@ -50,7 +50,11 @@ export default class extends React.PureComponent {
 
   render () {
     return (
-      <Section title='About'>
+      <Section
+        title='About'
+        anchor='about'
+        position='right'
+        >
         <Content>
           <ImageContainer>
             <Image />

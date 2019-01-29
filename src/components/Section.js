@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import { SectionTitle } from './Title';
+import SectionTitle from './SectionTitle';
 import PropTypes from 'prop-types';
 
 const TitleContainer = styled.div`
@@ -11,6 +11,7 @@ const TitleContainer = styled.div`
 const Container = styled.div`
   padding: 70px;
   background-color: #f5f5f5;
+  position: relative;
   
   /* Section title aligned to the right */
   ${TitleContainer} {
@@ -33,19 +34,31 @@ export const WidthContainer = styled.div`
   position: relative;
 `;
 
+const HiddenAnchor = styled.div`
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+  top: -45px; /* navbar height */
+`;
+
 export default class Section extends React.PureComponent {
   render () {
     const {
       title,
       children,
+      anchor,
+      position,
       ...rest
     } = this.props;
 
     return (
       <Container {...rest}>
+        <HiddenAnchor id={anchor}/>
         <WidthContainer>
           <TitleContainer>
-            <SectionTitle>{title}</SectionTitle>
+            <SectionTitle position={position} anchor={anchor}>
+              {title}
+            </SectionTitle>
           </TitleContainer>
           {children}
         </WidthContainer>
@@ -55,9 +68,12 @@ export default class Section extends React.PureComponent {
 }
 
 Section.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
+  position: PropTypes.string,
+  anchor: PropTypes.string.isRequired
 };
 
 Section.defaultProps = {
-  title: 'Section title'
+  title: 'Section title',
+  position: 'left'
 }

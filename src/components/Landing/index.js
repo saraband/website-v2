@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components'
 import FontSizes from '../../constants/FontSizes'
 import Colors from '../../constants/Colors';
 import GreyShadesBackground from './GreyShadesBackground'
-import Title from '../Title';
+import Title, { Content,Background } from '../Title';
 import { FadeIn } from './Atom';
 
 const Container = styled.div`
@@ -16,26 +16,25 @@ const Container = styled.div`
   justify-content: space-between;
   align-items: start;
 
-  * {
+  /* TODO: css messy */
     font-family: 'Roboto';
   }
 `;
 
-const Name = styled(Title).attrs({
-  bgColor: Colors.WHITE
-})`
+const Name = styled(Title)`
   font-size: ${FontSizes.BIG};
   color: ${Colors.GREY};
   font-weight: bold;
+  
+  ${Background} {
+    background-color: ${Colors.WHITE};
+  }
 `;
 
-const JobTitle = styled(Title).attrs({
-  delay: 0.5,
-  bgColor: Colors.LIGHT_TURQUOISE
-})`
+const JobTitle = styled(Title)`
   font-size: ${FontSizes.LARGE};
   color: ${Colors.DARK_TURQUOISE};
-  font-weight: normal;
+  font-weight: normal !important;
 `;
 
 const ScrollContainer = styled.div`
@@ -52,21 +51,22 @@ const Flex = styled.div`
   align-items: ${p => p.align};
 `;
 
-const ScrollTitle = styled(Title).attrs({
-  fill: 100,
-  delay: 0.8,
-  bgColor: 'transparent'
-})`
+const ScrollTitle = styled(Title)`
   font-size: ${FontSizes.LARGE};
   color: ${Colors.WHITE};
-  font-weight: 100;
+  margin-bottom: 10px;
+  
+  * {
+    font-weight: lighter;
+    text-align: right;
+  }
+  
+  ${Background} {
+    background-color: transparent;
+  }
 `;
 
-const DownTitle = styled(Title).attrs({
-  fill: 100,
-  delay: 1.3,
-  bgColor: Colors.WHITE
-})`
+const DownTitle = styled(Title)`
   font-size: ${FontSizes.LARGE};
   color: ${Colors.DARK_TURQUOISE};
   font-weight: normal;

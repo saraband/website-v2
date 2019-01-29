@@ -79,7 +79,9 @@ const DescriptionButtons = styled.div`
   justify-content: space-between;
 `;
 
-const SourceButton = styled.a`
+const SourceButton = styled.a.attrs({
+  target: '_blank'
+})`
   text-decoration: none;
   border-radius: 2px;
   border: 2px solid ${Colors.LIGHT_GREY};
@@ -106,8 +108,11 @@ const DemoButton = styled(SourceButton)`
   background-color: ${Colors.TURQUOISE_2};
   transition: all 0.2s ease-in-out;
   text-shadow: 0 -2px rgba(0, 0, 0, 0.1);
+  ${NoSelect}
   
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     background-color: ${Colors.TURQUOISE};
     border-color: ${Colors.TURQUOISE};
     color: white;
@@ -130,7 +135,9 @@ export default class extends React.PureComponent {
         title,
         description,
         tags,
-        screenshots
+        screenshots,
+        liveDemoUrl,
+        githubUrl
       },
       ...rest
     } = this.props;
@@ -144,8 +151,8 @@ export default class extends React.PureComponent {
             <TagsList>{tags.map((tag, index) => <Tag key={index}>{tag}</Tag>)}</TagsList>
           </DescriptionContent>
           <DescriptionButtons>
-            <SourceButton>See source</SourceButton>
-            <DemoButton>Live demo</DemoButton>
+            <SourceButton href={githubUrl}>See source</SourceButton>
+            <DemoButton href={liveDemoUrl}>Live demo</DemoButton>
           </DescriptionButtons>
         </Description>
         <StyledSlider slides={new Array(5).fill(1)} />

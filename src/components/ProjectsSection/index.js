@@ -14,7 +14,9 @@ const hotBoxData = {
   title: 'HotBox',
   description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum urna eu rhoncus scelerisque. Nullam sit amet diam luctus, lacinia nulla sit amet, bibendum velit.',
   tags: ['React', 'GraphQL', 'Redux', 'Sequelize', 'Postgres'],
-  screenshots: []
+  screenshots: [],
+  githubUrl: 'https://github.com/saraband/demo-delivery-app',
+  liveDemoUrl: 'https://github.com/saraband/demo-delivery-app'
 };
 const nuageData = hotBoxData;
 
@@ -25,7 +27,10 @@ export default class extends React.PureComponent {
 
   render () {
     return (
-      <Section>
+      <Section
+        title='Projects'
+        anchor='projects'
+        >
         <Content>
           <Project data={hotBoxData} />
           <Project data={nuageData} />

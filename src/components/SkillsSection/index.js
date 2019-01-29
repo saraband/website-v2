@@ -41,7 +41,10 @@ export default class extends React.PureComponent {
 
   render () {
     return (
-      <Section title='Skills & interests'>
+      <Section
+        title='Skills & interests'
+        anchor='skills-and-interests'
+        >
         <Content>
           <Skills skills={SkillsList} />
           <Image />
