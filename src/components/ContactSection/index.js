@@ -6,7 +6,10 @@ import Colors from '../../constants/Colors'
 import { BoxShadow } from '../../misc/styles'
 import FormValidator from '../Form/FormValidator'
 import Input from '../Form/Input'
+import Textarea from '../Form/Textarea'
 import v from '../Form/Validate'
+import { DemoButton } from '../ProjectsSection/Project'
+import ToolTip from '../ToolTip'
 
 const Content = styled.div`
   background-color: ${Colors.WHITE};
@@ -21,7 +24,6 @@ const Content = styled.div`
 
 const Side = styled.div`
   width: 25%;
-  background-color: red;
   position: relative;
   left: -30px;
   background-color: ${Colors.TURQUOISE_2};
@@ -34,9 +36,17 @@ const Side = styled.div`
 `;
 
 const Form = styled.form`
-  display: block;
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
-  background-color: blue;
+  
+  > * {
+    margin-bottom: 20px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 export default class extends React.PureComponent {
@@ -69,22 +79,31 @@ export default class extends React.PureComponent {
         >
         <Content>
           <Side />
-          <Form onSubmit={e => e.preventDefault()}>
             <FormValidator>
               {({ isFormValid, validator }) => (
-                <div>
+                <Form onSubmit={e => e.preventDefault()}>
                   <Input
                     name='email'
+                    placeholder='Your email'
                     validate={v.email}
                     value={email}
                     onChange={this.updateForm}
                     validator={validator}
                     />
-                  <button disabled={!isFormValid}>send</button>
-                </div>
+                  <Textarea
+                    name='message'
+                    placeholder='Your message'
+                    validate={v.message}
+                    value={message}
+                    onChange={this.updateForm}
+                    validator={validator}
+                    />
+                    <ToolTip tip='Hello'>
+                      <DemoButton>Send</DemoButton>
+                    </ToolTip>
+                </Form>
               )}
             </FormValidator>
-          </Form>
           <Side />
         </Content>
       </Section>

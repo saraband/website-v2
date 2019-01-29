@@ -1,11 +1,8 @@
 /*
- *	BaseInput.js
- *	------------
- *	Custom input that accepts validation rules and can be
- *	connected to a validator.
- *
- *
- */
+**  TODO: This is repeated with Input.js
+*   => Extract the logic of the two components in a HOC
+*   so it's not written twice
+*/
 
 import React from 'react';
 import styled from 'styled-components';
@@ -17,16 +14,22 @@ import Colors from '../../constants/Colors'
 
 const Container = styled.div`
   position: relative;
-  display: inline-block;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 `;
 
-const StyledInput = styled.input`
+const StyledTextarea = styled.textarea`
   border-radius: 2px;
   padding: 8px 12px 8px 12px;
   font-size: ${FontSizes.MEDIUM};
   border: 2px solid ${Colors.LIGHT_GREY};
   transition: all 0.15s ease-in-out;
+  resize: none;
+  display: block;
+  flex-grow: 1;
   width: 100%;
+  min-height: 200px;
 
   &:focus {
     outline: 0;
@@ -41,22 +44,9 @@ const StyledInput = styled.input`
         : `border-color: ${Colors.RED} !important;`;
     }
   }}
-  /* ICON */
-  ${p => p.icon
-    ? `
-        background-image: url(${p.icon});
-        background-size: auto 100%;
-        background-repeat: no-repeat;
-        background-position: right center;
-      `
-    : ''
-  }
-  
-  /* CUSTOM INPUT STYLE */
-  ${p => p.inputStyle}
 `;
 
-export default class Input extends React.Component {
+export default class Textarea extends React.Component {
   // TODO: troubleshoot this
   // TODO maybe it has side effects
   shouldComponentUpdate (nextProps, nextState, nextContext) {
@@ -153,26 +143,23 @@ export default class Input extends React.Component {
 
     return (
       <Container className={className}>
-        <StyledInput
+        <StyledTextarea
           onChange={this.handleChange}
           {...rest}
 
           // styled-component props
           showBorder={hasTypedAnythingYet && validate}
           validBorder={isValid}
-          />
+        />
       </Container>
     );
   }
 };
 
-Input.propTypes = {
-  icon: PropTypes.string,
-  autoComplete: PropTypes.string,
+Textarea.propTypes = {
   errorLabel: PropTypes.string,
   onChange: PropTypes.func,
   name: PropTypes.string.isRequired,
-  type: PropTypes.string,
   validate: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.PropTypes.arrayOf([PropTypes.func])
@@ -184,8 +171,6 @@ Input.propTypes = {
   })
 };
 
-Input.defaultProps = {
-  autoComplete: 'off',
-  errorLabel: 'This input is not valid',
-  type: 'text'
+Textarea.defaultProps = {
+  errorLabel: 'This input is not valid'
 };

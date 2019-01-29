@@ -6,7 +6,10 @@ export default {
   email: str => /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(str),
 
   // Tests if the password has at least 8 characters, an uppercase letter and a number
-  password: pw => /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(pw)
+  password: pw => /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(pw),
+
+  // Test if the message is between 10 and 500 characters
+  message: message => message.length >= 10 && message.length <= 500
 };
 
 // This helper tests a rule (or an array of rules)

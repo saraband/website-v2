@@ -103,7 +103,8 @@ const SourceButton = styled.a.attrs({
   }
 `;
 
-const DemoButton = styled(SourceButton)`
+// TODO: put this in a different file
+export const DemoButton = styled(SourceButton)`
   margin-right: 0;
   border: 2px solid ${Colors.TURQUOISE_2};
   color: white;
