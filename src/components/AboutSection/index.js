@@ -2,45 +2,95 @@ import React from 'react';
 import styled from 'styled-components';
 import Section from '../Section'
 import FontSizes from '../../constants/FontSizes'
-import { SectionTitle } from '../Title'
+import { BoxShadow, NoSelect } from '../../misc/styles'
+import ella from '../../images/ella.jpg'
+import Colors from '../../constants/Colors'
+import { Tag, TagsList } from '../ProjectsSection/Project'
+import StackOverflowSVG from '../../images/stackoverflow.svg'
+import GithubSVG from '../../images/github.svg'
+import PaperclipSVG from '../../images/paperclip.svg'
 
-const Top = styled.div`
-  border: 1px solid red;
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-`;
-
-const ImageContainer = styled.div`
-  position: relative;
-  top: 0;
-  left: -50px;
-  height: 100%;
-  width: 30%;
-`;
+const AboutTags = [
+  'React',
+  'GraphQL',
+  'NodeJS',
+  'Apollo',
+  'Redux',
+  'PostgreSQL',
+  'Express',
+  'VueJS'
+];
 
 const Image = styled.div`
-  border: 1px solid red;
-  width: 100%;
-  height: 100%;
-  padding-bottom: 25%;
-  padding-top: 25%;
-  position: absolute;
+  width: 30%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  min-width: 250px;
+  margin-left: -30px;
+  transform: translate3d(-20px, 0, 0);
+  background-image: url(${ella});
+  background-size: cover;
+  background-position: center;
+  ${BoxShadow}
+`;
+
+const LinksContainer = styled.div`
+  display: flex;
+  margin-top: 30px;
+`;
+
+const LinkLogo = styled.img`
+  height: ${FontSizes.MEDIUM};
+  margin: 0;
+  margin-right: 10px;
+  ${NoSelect}
+`;
+
+const ExternalLink = styled.a.attrs({
+  target: '_blank'
+})`
+  font-size: ${FontSizes.MEDIUM};
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  flex-shrink: 0;
+  background-color: ${Colors.LIGHT_TURQUOISE};
+  color: ${Colors.GREY};
+  margin-right: 20px;
+  padding: 15px;
+  transition: all 0.15s ease-in-out;
+  filter: grayscale(100%);
+  cursor: pointer;
+  text-decoration: none;
+  
+  &:hover {
+    filter: grayscale(0%);
+    ${BoxShadow}
+  }
+  
+  &:last-child {
+    margin-right: unset;
+  }
 `;
 
 const Content = styled.div`
   background-color: white;
-  height: 300px;
   margin-left: 30px;
   padding: 20px;
-  position: relative;
   display: flex;
   flex-direction: row;
 `;
 
 const Right = styled.div`
-  border: 1px solid red;
   flex-grow: 1;
+`;
+
+const Title = styled.h3`
+  color: ${Colors.LIGHT_GREY};
+  font-size: ${FontSizes.LARGE};
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bold;
 `;
 
 export default class extends React.PureComponent {
@@ -56,14 +106,27 @@ export default class extends React.PureComponent {
         position='right'
         >
         <Content>
-          <ImageContainer>
-            <Image />
-          </ImageContainer>
+          <Image>f</Image>
           <Right>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam bibendum, dolor eget consectetur dictum,
-            neque urna scelerisque diam, hendrerit gravida nisi lacus at justo. Duis porttitor turpis faucibus odio
-            convallis semper. Praesent euismod nunc egestas augue dictum vestibulum. Morbi blandit sapien quis elit
-            ultrices ultrices.
+            Self taught javascript developper, I’m passionate about new technologies.
+            Constantly on the lookout for new challenges, I like to constantly push my
+            limits and thrive outside my comfort zone.
+            <Title>The stacks I like to work with</Title>
+            <TagsList>{AboutTags.map((tag, index) => <Tag key={index}>{tag}</Tag>)}</TagsList>
+            <LinksContainer>
+              <ExternalLink href='/CV.png'>
+                <LinkLogo src={PaperclipSVG} alt='Curriculum'/>
+                Curriculum
+              </ExternalLink>
+              <ExternalLink href='https://github.com/saraband'>
+                <LinkLogo src={GithubSVG} alt='Github'/>
+                Github
+              </ExternalLink>
+              <ExternalLink href='https://stackoverflow.com/users/1419590/saraband'>
+                <LinkLogo src={StackOverflowSVG} alt='Stackoverflow'/>
+                StackOverflow
+              </ExternalLink>
+            </LinksContainer>
           </Right>
         </Content>
       </Section>

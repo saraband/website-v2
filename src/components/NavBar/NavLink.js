@@ -3,9 +3,10 @@ import styled from 'styled-components';
 import FontSizes from '../../constants/FontSizes'
 
 const StyledLink = styled.a`
-  display: inline-block;
   cursor: pointer;
+  height: 45px;
   padding: 10px;
+  display: flex;
   font-size: ${FontSizes.NORMAL};
   text-shadow: 0 -2px rgba(0, 0, 0, 0.1);
   

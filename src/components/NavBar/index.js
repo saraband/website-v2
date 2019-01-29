@@ -4,6 +4,7 @@ import { WidthContainer } from '../Section'
 import NavLink from './NavLink'
 import Colors from '../../constants/Colors'
 import { BoxShadow } from '../../misc/styles'
+import LogoSVG from '../../images/logo.svg'
 
 const Container = styled.div`
   position: sticky;
@@ -16,7 +17,8 @@ const Container = styled.div`
 
 const MenuContainer = styled(WidthContainer)`
   display: flex;
-  padding: auto 70px !important;
+  padding-left: 20px;
+  padding-right: 20px;
   justify-content: space-between;
   align-items: center;
   height: 100%;
@@ -25,6 +27,21 @@ const MenuContainer = styled(WidthContainer)`
 const Left = styled.div`
 `;
 const Right = styled.div`
+  display: flex;
+`;
+
+const LogoLink = styled(NavLink).attrs({
+  href: '/'
+})`
+  padding: 0 10px;
+`;
+
+const Logo = styled.img.attrs({
+  src: LogoSVG,
+  alt: 'Home'
+})`
+  height: 45px;
+  margin: 0;
 `;
 
 export default class extends React.PureComponent {
@@ -37,7 +54,7 @@ export default class extends React.PureComponent {
       <Container>
         <MenuContainer>
           <Left>
-            <NavLink to=''>Yassine Hermellin</NavLink>
+            <LogoLink to='/'><Logo /></LogoLink>
           </Left>
           <Right>
             <NavLink to='about'>About</NavLink>

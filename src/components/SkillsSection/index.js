@@ -5,6 +5,8 @@ import FontSizes from '../../constants/FontSizes'
 import { SectionTitle } from '../Title'
 import Skills from './Skills'
 import Colors from '../../constants/Colors'
+import { BoxShadow, NoSelect } from '../../misc/styles'
+import Atom from '../Landing/Atom'
 
 const SkillsList = [
   { name: 'React',                                              value: 90 },
@@ -19,12 +21,16 @@ const SkillsList = [
   { name: 'HTML/CSS',                                           value: 90 }
 ];
 
-const Image = styled.div`
-  width: 45%;
-  height: 100%;
-  background-color: blue;
-  border: 1px solid red;
+const Right = styled.div`
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  margin-right: -30px;
+  background-color: ${Colors.TURQUOISE_2};
   align-self: stretch;
+  overflow: hidden;
+  ${BoxShadow}
 `;
 
 const Content = styled.div`
@@ -47,7 +53,9 @@ export default class extends React.PureComponent {
         >
         <Content>
           <Skills skills={SkillsList} />
-          <Image />
+          <Right>
+            <Atom />
+          </Right>
         </Content>
       </Section>
     );

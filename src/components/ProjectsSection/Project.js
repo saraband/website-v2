@@ -53,7 +53,7 @@ const Container = styled.div`
   }
 `;
 
-const TagsList = styled.ul`
+export const TagsList = styled.ul`
   list-style-type: none;
   margin: 0;
   margin-bottom: 30px;
@@ -62,7 +62,9 @@ const TagsList = styled.ul`
 
 const DescriptionContent = styled.div``;
 
-const Tag = styled.li`
+// TODO: this should be outside this file since
+// it is used in about section
+export const Tag = styled.li`
   display: inline-block;
   border-radius: 2px;
   margin: 8px;
