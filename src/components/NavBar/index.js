@@ -57,9 +57,9 @@ export default class extends React.PureComponent {
             <LogoLink to='/'><Logo /></LogoLink>
           </Left>
           <Right>
-            <NavLink to='about'>About</NavLink>
-            <NavLink to='about'>Projects</NavLink>
-            <NavLink to='about'>Contact</NavLink>
+            <NavLink href='#about'>About</NavLink>
+            <NavLink href='#projects'>Projects</NavLink>
+            <NavLink href='#contact'>Contact</NavLink>
           </Right>
         </MenuContainer>
       </Container>

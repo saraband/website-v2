@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import FontSizes from '../../constants/FontSizes'
+import Colors from '../../constants/Colors'
 
 const StyledLink = styled.a`
   cursor: pointer;
@@ -8,6 +9,8 @@ const StyledLink = styled.a`
   padding: 10px;
   display: flex;
   font-size: ${FontSizes.NORMAL};
+  color: ${Colors.WHITE};
+  text-decoration: none;
   text-shadow: 0 -2px rgba(0, 0, 0, 0.1);
   
   &:hover {

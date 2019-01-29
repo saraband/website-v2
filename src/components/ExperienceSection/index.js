@@ -151,8 +151,8 @@ export default class extends React.PureComponent {
               description,
               link,
               company
-            }) => (
-              <Experience>
+            }, index) => (
+              <Experience key={index}>
                 <ExperienceDate>{date}</ExperienceDate>
                 <ExperienceTitle>{title}</ExperienceTitle>
                 <ExperienceCompany>{company}</ExperienceCompany>

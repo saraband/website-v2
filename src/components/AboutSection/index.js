@@ -109,7 +109,7 @@ export default class extends React.PureComponent {
           <Image>f</Image>
           <Right>
             Self taught javascript developper, I’m passionate about new technologies.
-            Constantly on the lookout for new challenges, I like to constantly push my
+            Constantly on the lookout for new challenges, I like to push my
             limits and thrive outside my comfort zone.
             <Title>The stacks I like to work with</Title>
             <TagsList>{AboutTags.map((tag, index) => <Tag key={index}>{tag}</Tag>)}</TagsList>
