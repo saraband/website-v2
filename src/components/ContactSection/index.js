@@ -103,6 +103,10 @@ const Button = styled.button`
   }
 `;
 
+const Hidden = styled.div`
+  display: none;
+`;
+
 export default class extends React.PureComponent {
   constructor (props) {
     super(props);
@@ -127,12 +131,30 @@ export default class extends React.PureComponent {
       isSending: true
     });
 
-    setTimeout(() => {
+    const data = {
+      email: this.state.email,
+      message: this.state.message
+    };
+
+    const params = Object.keys(data).map(key => `${key}=${encodeURIComponent(data[key])}`);
+    params.unshift('form-name=contact');
+
+
+    fetch('/', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      method: 'post',
+      credentials: 'same-origin',
+      body: params.join('&')
+    })
+    .then(() => {
       this.setState({
         hasSent: true,
-        sending: false
-      })
-    }, 1000)
+        isSending: false
+      });
+    });
   }
 
   render () {
@@ -192,6 +214,15 @@ export default class extends React.PureComponent {
             </Button>
           </Form>
           <Side />
+
+          {/* NETLIFY FORM */}
+          <Hidden dangerouslySetInnerHTML={{__html: `
+            <form name='contact' netlify netlify-honeypot='bot-field' hidden>
+              <input type='text' name='email' />
+              <textarea name="message"></textarea>
+            </form>
+            `}}>
+          </Hidden>
         </Content>
       </Section>
     );
