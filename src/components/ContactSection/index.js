@@ -214,16 +214,16 @@ export default class extends React.PureComponent {
             </Button>
           </Form>
           <Side />
-
-          {/* NETLIFY FORM */}
-          <Hidden dangerouslySetInnerHTML={{__html: `
-            <form name='contact' netlify netlify-honeypot='bot-field' hidden>
-              <input type='text' name='email' />
-              <textarea name="message"></textarea>
-            </form>
-            `}}>
-          </Hidden>
         </Content>
+
+        {/* NETLIFY FORM */}
+        <Hidden dangerouslySetInnerHTML={{__html: `
+          <form name='contact' netlify netlify-honeypot='bot-field' hidden>
+            <input type='text' name='email' />
+            <textarea name="message"></textarea>
+          </form>
+          `}}>
+        </Hidden>
       </Section>
     );
   }
