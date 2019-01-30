@@ -109,12 +109,11 @@ export const DemoButton = styled(SourceButton)`
   border: 2px solid ${Colors.TURQUOISE_2};
   color: white;
   background-color: ${Colors.TURQUOISE_2};
-  transition: all 0.2s ease-in-out;
+  transition: all 0.15s ease-in-out;
   text-shadow: 0 -2px rgba(0, 0, 0, 0.1);
   ${NoSelect}
   
   &:hover,
-  &:active,
   &:focus {
     background-color: ${Colors.TURQUOISE};
     border-color: ${Colors.TURQUOISE};

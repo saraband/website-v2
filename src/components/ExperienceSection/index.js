@@ -31,6 +31,7 @@ const Experience = styled.li`
     position: absolute;
     width: 9px;
     height: 9px;
+    transition: all 0.2s ease-in-out;
     background-color: ${Colors.TURQUOISE_2};
     transform: translate3d(-50%, 0, 0) rotate(45deg);
     top: 42px;

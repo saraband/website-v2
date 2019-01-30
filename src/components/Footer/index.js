@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Colors from '../../constants/Colors'
+import FontSizes from '../../constants/FontSizes'
 
 const Container = styled.p`
   background-color: ${Colors.DARK_TURQUOISE};
@@ -8,7 +9,8 @@ const Container = styled.p`
   display: flex;
   justify-content: center;
   padding: 20px;
-  font-weight: lighter !important;
+  font-weight: lighter;
+  font-family: 'Roboto';
   margin: 0;
   position: relative;
   box-shadow: 0px -5px 0px 0px rgba(0, 0, 0, 0.12);

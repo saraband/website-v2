@@ -3,13 +3,7 @@ import styled from 'styled-components';
 import Section from '../Section'
 import FontSizes from '../../constants/FontSizes'
 import Colors from '../../constants/Colors'
-import { BoxShadow } from '../../misc/styles'
-import FormValidator from '../Form/FormValidator'
-import Input from '../Form/Input'
-import Textarea from '../Form/Textarea'
-import v from '../Form/Validate'
-import { DemoButton } from '../ProjectsSection/Project'
-import ToolTip from '../ToolTip'
+import { BoxShadow, NoSelect } from '../../misc/styles'
 
 const Content = styled.div`
   background-color: ${Colors.WHITE};
@@ -39,13 +33,73 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  margin: 0;
+`;
+
+const Input = styled.input`
+  border: 2px solid ${p => p.valid ? Colors.TURQUOISE_2 : Colors.RED};
+  color: ${Colors.GREY};
+  font-size: ${FontSizes.MEDIUM};
+  padding: 10px;
   
-  > * {
-    margin-bottom: 20px;
-    
-    &:last-child {
-      margin-bottom: 0;
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 5px ${Colors.LIGHT_TURQUOISE};
+    outline: 0;
+  }
+  
+  &:disabled {
+    filter: grayscale(100%);
+  }
+`;
+
+const Textarea = styled(Input).attrs({
+  as: 'textarea'
+})`
+  margin-bottom: 0;
+  resize: none;
+  flex-grow: 1;
+  min-height: 200px;
+`;
+
+const Error = styled.label`
+  color: ${Colors.RED};
+  font-size: ${FontSizes.SMALL};
+  opacity: ${p => p.show ? 1 : 0};
+  padding-top: 5px;
+  padding-bottom: 5px;
+`;
+
+const Button = styled.button`
+  border-radius: 2px;
+  border: 0;
+  font-size: ${FontSizes.MEDIUM};
+  padding: 10px;
+  flex-grow: 1;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease-in-out;
+  color: white;
+  background-color: ${Colors.TURQUOISE_2};
+  text-shadow: 0 -2px rgba(0, 0, 0, 0.1);
+  ${NoSelect}
+  
+  &:hover,
+  &:focus {
+    &:not(:disabled) {
+      background-color: ${Colors.TURQUOISE};
+      color: white;
+      ${BoxShadow}
     }
+  }
+  
+  &:active:not(:disabled) {
+    opacity: 0.8;
+  }
+  
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 `;
 
@@ -55,21 +109,43 @@ export default class extends React.PureComponent {
 
     this.state = {
       email: '',
-      message: ''
+      message: '',
+      hasSent: false,
+      isSending: false
     };
   }
 
-  updateForm = ({ name, value }) => {
+  updateForm = ({ target }) => {
     this.setState({
-      [name]: value
+      [target.name]: target.value
     });
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.setState({
+      isSending: true
+    });
+
+    setTimeout(() => {
+      this.setState({
+        hasSent: true,
+        sending: false
+      })
+    }, 1000)
   }
 
   render () {
     const {
       email,
-      message
+      message,
+      hasSent,
+      isSending
     } = this.state;
+
+    const isEmailValid = !email.length || (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email));
+    const isMessageValid = !message.length || (message.trim().length >= 10 && message.trim().length <= 500);
+    const isButtonDisabled = !email.length || !message.length || !isEmailValid || !isMessageValid || hasSent || isSending;
 
     return (
       <Section
@@ -79,31 +155,42 @@ export default class extends React.PureComponent {
         >
         <Content>
           <Side />
-            <FormValidator>
-              {({ isFormValid, validator }) => (
-                <Form onSubmit={e => e.preventDefault()}>
-                  <Input
-                    name='email'
-                    placeholder='Your email'
-                    validate={v.email}
-                    value={email}
-                    onChange={this.updateForm}
-                    validator={validator}
-                    />
-                  <Textarea
-                    name='message'
-                    placeholder='Your message'
-                    validate={v.message}
-                    value={message}
-                    onChange={this.updateForm}
-                    validator={validator}
-                    />
-                    <ToolTip tip='Hello'>
-                      <DemoButton>Send</DemoButton>
-                    </ToolTip>
-                </Form>
-              )}
-            </FormValidator>
+          <Form
+            disabled={true || hasSent || isSending}
+            onSubmit={this.handleSubmit}
+            >
+            {/* EMAIL */}
+            <Input
+              value={email}
+              disabled={hasSent || isSending}
+              placeholder='Your email'
+              name='email'
+              onChange={this.updateForm}
+              valid={isEmailValid}
+              />
+            <Error show={!isEmailValid}>
+              This is not a valid email
+            </Error>
+
+            {/* MESSAGE */}
+            <Textarea
+              value={message}
+              disabled={hasSent || isSending}
+              placeholder='Your message'
+              name='message'
+              onChange={this.updateForm}
+              valid={isMessageValid}
+              />
+            <Error show={!isMessageValid}>
+              Your message must be between 10 and 500 characters
+            </Error>
+            <Button disabled={isButtonDisabled}>
+              {hasSent
+                ? 'Message sent !'
+                : (isSending ? 'Sending...' : 'Send')
+              }
+            </Button>
+          </Form>
           <Side />
         </Content>
       </Section>

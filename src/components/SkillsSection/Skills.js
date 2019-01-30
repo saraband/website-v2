@@ -16,10 +16,17 @@ const SkillContainer = styled.div`
   position: relative;
   margin-bottom: 20px;
   margin-left: -30px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
   ${BoxShadow}
   
   &:first-child {
     margin-top: 20px;
+  }
+  
+  &:hover {
+    transform: translate3d(-10px, 0, 0);
+    filter: brightness(105%);
   }
 `;
 

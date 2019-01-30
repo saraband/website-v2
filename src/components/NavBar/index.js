@@ -8,6 +8,7 @@ import LogoSVG from '../../images/logo.svg'
 
 const Container = styled.div`
   position: sticky;
+  font-family: 'Roboto';
   top: 0;
   background-color: ${Colors.DARK_TURQUOISE};
   color: white;
