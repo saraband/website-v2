@@ -35,6 +35,11 @@ const LogoLink = styled(NavLink).attrs({
   href: '/'
 })`
   padding: 0 10px;
+  opacity: 0.8;
+  
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 const Logo = styled.img.attrs({
