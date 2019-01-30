@@ -11,6 +11,7 @@ const Container = styled.div`
   font-family: 'Roboto';
   top: 0;
   background-color: ${Colors.DARK_TURQUOISE};
+  opacity: 0.95;
   color: white;
   z-index: 9999;
   ${BoxShadow}

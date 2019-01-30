@@ -5,7 +5,7 @@ import FontSizes from '../../constants/FontSizes'
 
 const Container = styled.p`
   background-color: ${Colors.DARK_TURQUOISE};
-  color: ${Colors.WHITE}
+  color: ${Colors.WHITE};
   display: flex;
   justify-content: center;
   padding: 20px;
