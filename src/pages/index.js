@@ -9,6 +9,8 @@ import SkillsSection from '../components/SkillsSection';
 import ExperienceSection from '../components/ExperienceSection';
 import ProjectsSection from '../components/ProjectsSection';
 import ContactSection from '../components/ContactSection';
+import FaviconPNG from '../images/favicon.png';
+import { Helmet } from 'react-helmet';
 
 const Title = styled.h1``;
 
@@ -21,6 +23,10 @@ class IndexPage extends React.Component {
   render () {
     return (
       <Layout>
+        <Helmet>
+          <title>Yassine Hermellin - Portfolio</title>
+          <link rel='icon' type='image/png' href={FaviconPNG} sizes='32x32' />
+        </Helmet>
         <AboutSection />
         <SkillsSection />
         <ExperienceSection />
