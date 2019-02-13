@@ -87,7 +87,7 @@ const ExperiencesData = [
     description: (
       <ExperienceDescription>
         Currently working on several commercial projects including the Shoutcast Radiomanager, AudioValley and an internal manager tool.
-        Using recent front-end frameworks and javascript such as <HighLight>React</HighLight>, <HighLight>VueJS</HighLight>, <HighLight>Vuex</HighLight>
+        Using modern front-end frameworks and libraries such as <HighLight>React</HighLight>, <HighLight>VueJS</HighLight>, <HighLight>Vuex</HighLight>
         , <HighLight>Nuxt</HighLight> and <HighLight>Redux</HighLight>.
       </ExperienceDescription>
     )
