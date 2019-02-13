@@ -9,16 +9,16 @@ import { BoxShadow, NoSelect } from '../../misc/styles'
 import Atom from '../Landing/Atom'
 
 const SkillsList = [
-  { name: 'React',                                              value: 90 },
-  { name: 'Redux',                                              value: 80 },
-  { name: 'VueJS',                                              value: 75 },
-  { name: 'NodeJS',                                             value: 80 },
-  { name: 'Express',                                            value: 75 },
-  { name: 'GraphQL',                                            value: 75 },
-  { name: 'Sequelize',                                          value: 70 },
-  { name: 'Postgres',                                           value: 70 },
-  { name: 'Adobe suite (Photoshop, Illustrator, Premiere',      value: 90 },
-  { name: 'HTML/CSS',                                           value: 90 }
+  { name: 'React',                                              value: 97 },
+  { name: 'Redux',                                              value: 96 },
+  { name: 'VueJS',                                              value: 94 },
+  { name: 'NodeJS',                                             value: 87 },
+  { name: 'Express',                                            value: 89 },
+  { name: 'GraphQL',                                            value: 91 },
+  { name: 'Sequelize',                                          value: 89 },
+  { name: 'Postgres',                                           value: 86 },
+  { name: 'Adobe suite (Photoshop, Illustrator, Premiere',      value: 95 },
+  { name: 'HTML/CSS',                                           value: 97 }
 ];
 
 const Right = styled.div`

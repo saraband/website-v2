@@ -96,10 +96,16 @@ const SourceButton = styled.a.attrs({
   cursor: pointer;
   text-align: center;
   transition: all 0.2s ease-in-out;
+  ${p => p.disabled ? 'filter: grayscale(100%);opacity: 0.7;' : ''};
   
   &:hover {
-    border-color: ${Colors.TURQUOISE_2};
-    color: ${Colors.TURQUOISE_2};
+    ${p => !p.disabled
+      ? `
+        border-color: ${Colors.TURQUOISE_2};
+        color: ${Colors.TURQUOISE_2};
+      `
+      : ''
+    }
   }
 `;
 
@@ -115,10 +121,15 @@ export const DemoButton = styled(SourceButton)`
   
   &:hover,
   &:focus {
-    background-color: ${Colors.TURQUOISE};
-    border-color: ${Colors.TURQUOISE};
-    color: white;
-    ${BoxShadow}
+    ${p => !p.disabled
+      ? `
+        background-color: ${Colors.TURQUOISE};
+        border-color: ${Colors.TURQUOISE};
+        color: white;
+        ${BoxShadow}
+      `
+      : ''
+    }
   }
 `;
 
@@ -153,11 +164,11 @@ export default class extends React.PureComponent {
             <TagsList>{tags.map((tag, index) => <Tag key={index}>{tag}</Tag>)}</TagsList>
           </DescriptionContent>
           <DescriptionButtons>
-            <SourceButton href={githubUrl}>See source</SourceButton>
-            <DemoButton href={liveDemoUrl}>Live demo</DemoButton>
+            <SourceButton disabled={!githubUrl} href={githubUrl}>See source</SourceButton>
+            <DemoButton disabled={!githubUrl} href={liveDemoUrl}>Live demo</DemoButton>
           </DescriptionButtons>
         </Description>
-        <StyledSlider slides={new Array(5).fill(1)} />
+        <StyledSlider slides={screenshots} />
       </Container>
     );
   }

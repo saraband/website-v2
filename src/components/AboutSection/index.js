@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import Section from '../Section'
-import FontSizes from '../../constants/FontSizes'
-import { BoxShadow, NoSelect } from '../../misc/styles'
-import ella from '../../images/ella.jpg'
-import Colors from '../../constants/Colors'
-import { Tag, TagsList } from '../ProjectsSection/Project'
-import StackOverflowSVG from '../../images/stackoverflow.svg'
-import GithubSVG from '../../images/github.svg'
-import PaperclipSVG from '../../images/paperclip.svg'
+import Section from '../Section';
+import FontSizes from '../../constants/FontSizes';
+import { BoxShadow, NoSelect } from '../../misc/styles';
+import picture from '../../images/my_face_when_i_m_serious.jpg';
+import Colors from '../../constants/Colors';
+import { Tag, TagsList } from '../ProjectsSection/Project';
+import StackOverflowSVG from '../../images/stackoverflow.svg';
+import GithubSVG from '../../images/github.svg';
+import PaperclipSVG from '../../images/paperclip.svg';
+import CurriculumPDF from '../../assets/CV_YassineHermellin.pdf';
 
 const AboutTags = [
   'React',
@@ -28,7 +29,7 @@ const Image = styled.div`
   min-width: 250px;
   margin-left: -30px;
   transform: translate3d(-20px, 0, 0);
-  background-image: url(${ella});
+  background-image: url(${picture});
   background-size: cover;
   background-position: center;
   ${BoxShadow}
@@ -106,15 +107,15 @@ export default class extends React.PureComponent {
         position='right'
         >
         <Content>
-          <Image>f</Image>
+          <Image />
           <Right>
-            Self taught javascript developper, I’m passionate about new technologies.
+            Self taught javascript developer, I’m passionate about new technologies.
             Constantly on the lookout for new challenges, I like to push my
-            limits and thrive outside my comfort zone.
+            limits and thrive outside of my comfort zone.
             <Title>The stacks I like to work with</Title>
             <TagsList>{AboutTags.map((tag, index) => <Tag key={index}>{tag}</Tag>)}</TagsList>
             <LinksContainer>
-              <ExternalLink href='/CV.png'>
+              <ExternalLink href={CurriculumPDF}>
                 <LinkLogo src={PaperclipSVG} alt='Curriculum'/>
                 Curriculum
               </ExternalLink>

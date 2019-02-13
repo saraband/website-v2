@@ -4,6 +4,7 @@ import FontSizes from '../../constants/FontSizes'
 import { BoxShadow, NoSelect } from '../../misc/styles'
 import ArrowRightSVG from '../../images/arrow-right.svg';
 import ArrowLeftSVG from '../../images/arrow-left.svg';
+import Colors from '../../constants/Colors'
 
 const ArrowLeft = styled.img.attrs({
   src: ArrowLeftSVG
@@ -20,13 +21,12 @@ const ArrowRight = styled.img.attrs({
 `;
 
 const Container = styled.div`
-  background-color: blue;
-  opacity: 0.7;
+  background-color: rgba(0, 0, 0, 0.3);
   position: relative;
   overflow: hidden;
   padding-bottom: 16.5%;
   padding-top: 16.5%;
-  ${BoxShadow}
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
 `;
 
 const SlidesContainer = styled.div`
@@ -43,7 +43,10 @@ const SlidesContainer = styled.div`
 
 const Slide = styled.div`
   flex-grow: 1;
-  background-color: green;
+  background-color: ${Colors.LIGHT_TURQUOISE};
+  background-image: url(${p => p.background});
+  background-repeat: no-repeat;
+  background-size: cover;
   
   &:nth-child(even) {
     background-color: yellow;
@@ -68,6 +71,7 @@ const ControlButton = styled.div`
   cursor: pointer;
   filter: grayscale(100%);
   transition: all 0.2s ease-in-out;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   ${NoSelect}
   
   &:hover {
@@ -88,7 +92,6 @@ export default class extends React.PureComponent {
     const { currentSlide } = this.state;
     const { slides } = this.props;
 
-    console.log(currentSlide)
     this.setState({
       currentSlide: currentSlide - 1 < 0
         ? slides.length - 1
@@ -100,7 +103,6 @@ export default class extends React.PureComponent {
     const { currentSlide } = this.state;
     const { slides } = this.props;
 
-    console.log(currentSlide)
     this.setState({
       currentSlide: currentSlide + 1 > slides.length - 1
         ? 0
@@ -123,9 +125,14 @@ export default class extends React.PureComponent {
         </Controls>
         <SlidesContainer
           currentSlide={currentSlide}
-          numSlides={5}
+          numSlides={slides.length}
           >
-          {slides.map((_, index) => <Slide key={index} />)}
+          {slides.map((slide, index) => (
+            <Slide
+              key={index}
+              background={slide}
+              />
+          ))}
         </SlidesContainer>
       </Container>
     );

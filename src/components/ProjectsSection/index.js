@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import Section from '../Section'
-import FontSizes from '../../constants/FontSizes'
 import Project from './Project'
 
 const Content = styled.div`
@@ -12,13 +11,25 @@ const Content = styled.div`
 
 const hotBoxData = {
   title: 'HotBox',
-  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vestibulum urna eu rhoncus scelerisque. Nullam sit amet diam luctus, lacinia nulla sit amet, bibendum velit.',
+  description: 'This demo app emulates partially a food delivery website. It consists in a Express server hooked to a PostgreSQL database through Sequelize. The client application uses mainly React and is connected to the server with Apollo.',
   tags: ['React', 'GraphQL', 'Redux', 'Sequelize', 'Postgres'],
-  screenshots: [],
   githubUrl: 'https://github.com/saraband/demo-delivery-app',
-  liveDemoUrl: 'https://github.com/saraband/demo-delivery-app'
+  liveDemoUrl: 'https://hotbox-demo.herokuapp.com/',
+  screenshots: [
+    require('../../images/hotbox_0.jpg'),
+    require('../../images/hotbox_1.jpg'),
+    require('../../images/hotbox_2.jpg')
+  ]
 };
-const nuageData = hotBoxData;
+
+const nuageData = {
+  title: 'Nuage',
+  description: 'Image upload platform. Work in progress',
+  tags: ['React', 'GraphQL', 'Redux', 'Sequelize', 'Postgres'],
+  githubUrl: null,
+  liveDemoUrl: null,
+  screenshots: []
+};
 
 export default class extends React.PureComponent {
   constructor (props) {
